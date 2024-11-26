@@ -81,6 +81,7 @@ The folder contains 1 code file and 1 PDF file as mentioned above
 
 Then it contains 1 csv files
 "df_cleaned_out.csv" which contains further cleaned dataset
+(the csv file has been uploaded as rar to accomodate for the file size, kindly extract it)
 
 One-Way ANOVA:
 
@@ -119,7 +120,7 @@ Then it contains one csv files
 
 
 1) "df_cleaned_out.csv" which contains further cleaned dataset
-
+(the csv file has been uploaded as rar to accomodate for the file size, kindly extract it)
 Gradient Boosting Machine (GBM):
 
 References:
