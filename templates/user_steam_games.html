@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User: Steam Games List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">User: Steam Games List</h1>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>App ID</th>
+                    <th>Name</th>
+                    <th>Release Date</th>
+                    <th>Developer</th>
+                    <th>Publisher</th>
+                    <th>Platforms</th>
+                    <th>Achievements</th>
+                    <th>Positive Ratings</th>
+                    <th>Negative Ratings</th>
+                    <th>Average Playtime</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for game in steam_games %}
+                <tr>
+                    <td>{{ game[0] }}</td>
+                    <td>{{ game[1] }}</td>
+                    <td>{{ game[2] }}</td>
+                    <td>{{ game[3] }}</td>
+                    <td>{{ game[4] }}</td>
+                    <td>{{ game[5] }}</td>
+                    <td>{{ game[6] }}</td>
+                    <td>{{ game[7] }}</td>
+                    <td>{{ game[8] }}</td>
+                    <td>{{ game[9] }}</td>
+                    <td>${{ game[10] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/user_dashboard" class="btn btn-primary mt-3">Back to Dashboard</a>
+    </div>
+</body>
+</html>
