@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin: Steam Games List</title>
+</head>
+<body>
+    <h1>Admin: Steam Games List</h1>
+    <a href="/add_steam_game">Add New Steam Game</a>
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>App ID</th>
+                <th>Name</th>
+                <th>Release Date</th>
+                <th>English</th>
+                <th>Developer</th>
+                <th>Publisher</th>
+                <th>Platforms</th>
+                <th>Required Age</th>
+                <th>Categories</th>
+                <th>Genres</th>
+                <th>Steamspy Tags</th>
+                <th>Achievements</th>
+                <th>Positive Ratings</th>
+                <th>Negative Ratings</th>
+                <th>Average Playtime</th>
+                <th>Median Playtime</th>
+                <th>Owners</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+            <tr>
+                <td>{{ game[0] }}</td>
+                <td>{{ game[1] }}</td>
+                <td>{{ game[2] }}</td>
+                <td>{{ game[3] }}</td>
+                <td>{{ game[4] }}</td>
+                <td>{{ game[5] }}</td>
+                <td>{{ game[6] }}</td>
+                <td>{{ game[7] }}</td>
+                <td>{{ game[8] }}</td>
+                <td>{{ game[9] }}</td>
+                <td>{{ game[10] }}</td>
+                <td>{{ game[11] }}</td>
+                <td>{{ game[12] }}</td>
+                <td>{{ game[13] }}</td>
+                <td>{{ game[14] }}</td>
+                <td>{{ game[15] }}</td>
+                <td>{{ game[16] }}</td>
+                <td>{{ game[17] }}</td>
+                <td>${{ game[18] }}</td>
+                <td>
+                    <a href="/edit_steam_game/{{ game[0] }}">Edit</a> |
+                    <a href="/delete_steam_game/{{ game[0] }}" onclick="return confirm('Are you sure you want to delete this game?');">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>

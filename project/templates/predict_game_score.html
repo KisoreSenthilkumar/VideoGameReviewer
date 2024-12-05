@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Game Score</title>
+</head>
+<body>
+    <h1>Predict Game Score</h1>
+    <form method="POST">
+        <label for="is_action">Is Action (1/0):</label>
+        <input type="number" name="is_action" id="is_action" required>
+        <br>
+        <label for="is_indie">Is Indie (1/0):</label>
+        <input type="number" name="is_indie" id="is_indie" required>
+        <br>
+        <label for="is_casual">Is Casual (1/0):</label>
+        <input type="number" name="is_casual" id="is_casual" required>
+        <br>
+        <label for="is_strat">Is Strategy (1/0):</label>
+        <input type="number" name="is_strat" id="is_strat" required>
+        <br>
+        <label for="is_adv">Is Adventure (1/0):</label>
+        <input type="number" name="is_adv" id="is_adv" required>
+        <br>
+        <label for="is_f2p">Is Free-to-Play (1/0):</label>
+        <input type="number" name="is_f2p" id="is_f2p" required>
+        <br>
+        <label for="is_sim">Is Simulation (1/0):</label>
+        <input type="number" name="is_sim" id="is_sim" required>
+        <br>
+        <label for="is_windows">Supports Windows (1/0):</label>
+        <input type="number" name="is_windows" id="is_windows" required>
+        <br>
+        <label for="is_mac">Supports Mac (1/0):</label>
+        <input type="number" name="is_mac" id="is_mac" required>
+        <br>
+        <label for="is_linux">Supports Linux (1/0):</label>
+        <input type="number" name="is_linux" id="is_linux" required>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction is not none %}
+        <h2>Predicted Game Score: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
