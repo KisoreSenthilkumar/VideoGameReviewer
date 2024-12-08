@@ -71,10 +71,6 @@ This project explores key factors influencing video game success, leveraging dat
    👫 *Elaboration:* Social interaction in cooperative or multiplayer games significantly enhances user satisfaction. Players enjoy sharing achievements and competing with friends, which drives higher ratings compared to solo experiences.
 
 ---
-
-Based on the references and images shared, here’s the **decorative folder structure** for your project, inspired by the provided layouts:
-
----
 ### 📂 Folder Structure
 
 ```plaintext
