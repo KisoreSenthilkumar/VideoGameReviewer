@@ -42,7 +42,7 @@ This project explores key factors influencing video game success, leveraging dat
 
 ---
 
-### 🎓 **Harshita Itta (Playtime Prediction)**
+### 🎓 **Harshitha Itta (Playtime Prediction)**
 
 1️⃣ **Games with longer playtime offer more value, correlating positively with ownership counts.**  
    ⏳ *Elaboration:* Players associate longer playtimes with better entertainment value, especially for expansive RPGs and open-world games. These games offer extended content, encouraging more purchases and higher ownership rates over time.  
