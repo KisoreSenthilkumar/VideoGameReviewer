@@ -16,18 +16,16 @@ This project explores key factors influencing video game success, leveraging dat
 
 ----
 ## **Questions Assigned**
-
 | **Team Member**          | **Primary Hypotheses**                                                                                     | **Code Location**                  | **Model File Location**       | **Common Analysis Location**    |
 |---------------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------|--------------------------------|----------------------------------|
-| **Kisore Senthilkumar** | 1️⃣ Critic scores directly influence user ratings for games.                                               | `app/model_game_score.py`          | `app/model_game_score.pkl`    | `doc/analysis.txt`              |
+| **Kisore Senthilkumar**   | 1️⃣ Critic scores directly influence user ratings for games.                                               | `app/model_game_score.py`          | `app/model_game_score.pkl`    | `doc/analysis.txt`              |
 |                           | 2️⃣ A higher user review count amplifies the reliability of user ratings.                                 |                                     |                                |                                  |
-| **Harshitha Itta**       | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      | `doc/analysis.txt`              |
-|                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |                                  |
-| **Shashank Govindu**    | 1️⃣ Lower-priced games show exponential growth in ownership, especially during sales or discounts.         | `app/model_pricing.py`             | `app/model_pricing.pkl`       | `doc/analysis.txt`              |
-|                           | 2️⃣ Free-to-play games experience higher ownership but might not correlate with equally high engagement.   |                                     |                                |                                  |
-| **Neeraj Gummadi**      | 1️⃣ Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.      | `app/model_ratings.py`             | `app/model_ratings.pkl`       | `doc/analysis.txt`              |
+| **Harshitha Itta**        | 1️⃣ Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.      | `app/model_ratings.py`             | `app/model_ratings.pkl`       | `doc/analysis.txt`              |
 |                           | 2️⃣ Cooperative and multiplayer games are rated more positively compared to single-player experiences.    |                                     |                                |                                  |
-
+| **Shashank Govindu**      | 1️⃣ Lower-priced games show exponential growth in ownership, especially during sales or discounts.         | `app/model_pricing.py`             | `app/model_pricing.pkl`       | `doc/analysis.txt`              |
+|                           | 2️⃣ Free-to-play games experience higher ownership but might not correlate with equally high engagement.   |                                     |                                |                                  |
+| **Neeraj Gummadi**        | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      | `doc/analysis.txt`              |
+|                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |                                  |
 -----
 
 ## 🌟 **Detailed Hypotheses**
@@ -42,13 +40,13 @@ This project explores key factors influencing video game success, leveraging dat
 
 ---
 
-### 🎓 **Harshitha Itta (Playtime Prediction)**
+### 🎓 **Harshitha Itta (Ratings Prediction)**
 
-1️⃣ **Games with longer playtime offer more value, correlating positively with ownership counts.**  
-   ⏳ *Elaboration:* Players associate longer playtimes with better entertainment value, especially for expansive RPGs and open-world games. These games offer extended content, encouraging more purchases and higher ownership rates over time.  
+1️⃣ **Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.**  
+   🌍 *Elaboration:* RPGs and FPS games often provide detailed world-building, rich storytelling, and engaging mechanics that resonate with players. These genres consistently outperform others, such as casual or puzzle games, in terms of user ratings.  
 
-2️⃣ **Highly engaging games with repetitive play sessions lead to higher player retention and ownership.**  
-   🔄 *Elaboration:* Replayable games (e.g., multiplayer shooters or survival games) create lasting engagement, which fosters loyalty and attracts new players through word-of-mouth recommendations, driving higher ownership counts.
+2️⃣ **Cooperative and multiplayer games are rated more positively compared to single-player experiences.**  
+   👫 *Elaboration:* Social interaction in cooperative or multiplayer games significantly enhances user satisfaction. Players enjoy sharing achievements and competing with friends, which drives higher ratings compared to solo experiences.
 
 ---
 
@@ -62,14 +60,14 @@ This project explores key factors influencing video game success, leveraging dat
 
 ---
 
-### 🎓 **Neeraj Gummadi (Ratings Analysis)**
+### 🎓 **Neeraj Gummadi (Playtime Analysis)**
 
-1️⃣ **Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.**  
-   🌍 *Elaboration:* RPGs and FPS games often provide detailed world-building, rich storytelling, and engaging mechanics that resonate with players. These genres consistently outperform others, such as casual or puzzle games, in terms of user ratings.  
+1️⃣ **Games with longer playtime offer more value, correlating positively with ownership counts.**  
+   ⏳ *Elaboration:* Players associate longer playtimes with better entertainment value, especially for expansive RPGs and open-world games. These games offer extended content, encouraging more purchases and higher ownership rates over time.  
 
-2️⃣ **Cooperative and multiplayer games are rated more positively compared to single-player experiences.**  
-   👫 *Elaboration:* Social interaction in cooperative or multiplayer games significantly enhances user satisfaction. Players enjoy sharing achievements and competing with friends, which drives higher ratings compared to solo experiences.
-
+2️⃣ **Highly engaging games with repetitive play sessions lead to higher player retention and ownership.**  
+   🔄 *Elaboration:* Replayable games (e.g., multiplayer shooters or survival games) create lasting engagement, which fosters loyalty and attracts new players through word-of-mouth recommendations, driving higher ownership counts.
+   
 ---
 ### 📂 Folder Structure
 
