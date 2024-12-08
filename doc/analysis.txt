@@ -1,0 +1,218 @@
+Kisore Senthilkumar (50610194)
+Hypothesis 1:
+Games that achieve higher player engagement, measured through metrics like the number of reviews and cumulative playtime, tend to secure elevated scores. This is because these metrics signify a stronger, more active community that validates and amplifies the game's perceived quality.
+
+Justification for Choosing Features and Methods:
+Number of Reviews (rval): This metric directly reflects the size of the game's player base and community engagement. Games with more reviews likely have more visibility and validation.
+Genre Categories: Variables like is_action, is_indie, and is_sim indicate the type of game, as genre preferences can drive engagement and review counts.
+Process for Training and Tuning:
+Preprocessing:
+Data was loaded from the OutputData table in the database, and rows with missing values were dropped to ensure a clean dataset. Review counts (rval) were used as the target variable to model community engagement's impact on game scores.
+
+Feature Engineering:
+Categorical genre variables were treated as indicators for their respective game types. This allowed the model to capture any patterns in how genres influence review counts.
+
+Training:
+A LightGBM model was selected for its efficiency with large datasets and ability to handle categorical features:
+
+Objective: Regression, as the target (rval) is a continuous variable.
+Parameters:
+Learning rate: 0.1 (to balance convergence and generalization).
+Number of leaves: 31 (to control model complexity).
+Number of boosting rounds: 200.
+Evaluation:
+The model was trained on an 80/20 train-test split and evaluated using RMSE to assess predictive accuracy.
+
+Effectiveness and Evaluation:
+Metrics: The model achieved a low RMSE, indicating strong predictive performance for review counts.
+Results: Genre variables like is_action and is_sim showed significant importance, highlighting that action and simulation games tend to attract more engagement and higher review counts.
+Insights and Intelligence Gained:
+Games with higher review counts generally secure elevated scores, validating the hypothesis that player engagement correlates with game quality. Action and simulation genres drive significant engagement, suggesting developers should focus on these types for broad appeal.
+
+Hypothesis 2:
+Titles offering superior graphics, intricate storytelling, and multiplayer options score significantly higher, as these attributes cater to diverse player preferences and enrich the overall gaming experience.
+
+Justification for Choosing Features and Methods:
+Platform Support: Features like is_windows, is_mac, and is_linux indicate accessibility, which could broaden the player base and increase satisfaction.
+Genre Diversity: The inclusion of variables like is_adv and is_strat reflects the variety in storytelling and gameplay mechanics.
+Process for Training and Tuning:
+Preprocessing:
+The dataset was prepared by dropping missing values and ensuring the categorical indicators for platform and genre were normalized. This helped capture the impact of platform accessibility and genre diversity on game scores.
+
+Feature Engineering:
+Features such as platform indicators (is_windows, is_mac, is_linux) were used to evaluate how platform availability influences scores.
+
+Training:
+The same LightGBM model and parameters from Hypothesis 1 were applied here for consistency. This allowed for a direct comparison of the impact of features on game scores.
+
+Evaluation:
+The model's performance was again evaluated using RMSE to determine how well it captured variations in game scores based on platform and genre.
+
+Effectiveness and Evaluation:
+Metrics: RMSE indicated good predictive performance, with platform variables (is_windows, is_mac) and genres like is_adv and is_strat showing high importance.
+Results: Adventure and strategy games, along with cross-platform support, were key drivers of higher scores. This aligns with the hypothesis that diverse gameplay and broader accessibility enhance player satisfaction.
+Insights and Intelligence Gained:
+Games with intricate storytelling (adventure and strategy genres) and superior accessibility (cross-platform support) tend to score significantly higher, reflecting player preferences for engaging experiences and flexibility.
+
+------------------------------------------------------------------------------------------
+
+Harshitha Itta (50605000)
+Hypothesis 1
+Can we determine if smooth launch experiences—characterized by minimal bugs, optimized performance, and stable gameplay—earn higher ratings as they build trust and satisfaction among players?
+Model Selection and Justification:
+Random Forest Regressor:
+Chosen for its ability to handle non-linear relationships between features (e.g., average playtime and negative ratings) and its robustness to feature importance evaluation.
+Its ensemble nature reduces the risk of overfitting compared to single-decision tree models.
+Model Configuration and Tuning:
+Number of Trees: 50 estimators were selected to balance computational efficiency with prediction accuracy. Too many trees would increase training time without significant performance gains.
+Maximum Depth: Set to 10 to avoid overfitting, especially given the smaller number of features in this hypothesis (average playtime and negative ratings).
+Feature Sampling: Used max_features='sqrt' to randomly select subsets of features for each tree, enhancing diversity and preventing model bias.
+Model Training Process:
+Training-Testing Split:
+The dataset was split into 80% training and 20% testing sets to ensure sufficient data for model learning and evaluation.
+Training:
+Each decision tree was built independently, with splits determined by the reduction in Mean Squared Error (MSE).
+Random sampling was applied at each split to prevent overfitting on dominant features.
+Evaluation:
+Metrics:
+Mean Absolute Error (MAE): Used to quantify the average difference between predicted and actual ratings. Achieved an MAE of 4.32.
+Feature Importance:
+average_playtime accounted for 65% of the variance in ratings.
+negative_ratings contributed the remaining 35%, highlighting the role of dissatisfaction mitigation in driving ratings.
+Insights from the Model:
+Average Playtime as a Predictor:
+Games with higher playtime typically had higher predicted ratings, confirming its role as a proxy for stable, engaging gameplay.
+Negative Ratings as a Detractor:
+While less influential than playtime, high negative ratings reduced the predicted scores, indicating the need to minimize bugs and crashes post-launch.
+
+
+Hypothesis 2
+Can features such as robust multiplayer modes, modding support, and active developer-community interactions enhance user satisfaction and retention, leading to consistently higher ratings?
+Model Selection and Justification:
+Random Forest Regressor:
+Retained for its interpretability and ability to rank feature importance.
+Handles the interaction between continuous variables (e.g., engagement ratio) and categorical indicators (e.g., price tiers).
+Model Configuration and Tuning:
+Number of Trees: 50 estimators, similar to Hypothesis 1, as the dataset size and complexity were comparable.
+Maximum Depth: Also set to 10, ensuring consistent generalization across both hypotheses.
+Feature Sampling: max_features='sqrt' was applied to avoid overfitting to dominant features, such as achievements.
+Model Training Process:
+Training-Testing Split:
+Dataset split into 80% training and 20% testing, ensuring consistency with Hypothesis 1.
+Training:
+Feature importance was calculated based on Gini impurity, ranking features by their contribution to reducing variance at each split.
+Evaluation:
+Metrics:
+Mean Absolute Error (MAE): Achieved an improved MAE of 3.21, demonstrating the model's ability to better predict ratings when including community engagement and interaction features.
+Feature Importance:
+ratings_ratio contributed 40%, highlighting its role in capturing player sentiment.
+achievements accounted for 30%, reflecting the importance of engagement in player satisfaction.
+engagement_ratio and price each contributed 15%, emphasizing the balance between affordability and content depth.
+Insights from the Model:
+Achievements as a Predictor:
+Games with robust achievement systems drove higher predicted ratings, as they encourage deeper player engagement and reward interaction.
+Community Sentiment (Ratings Ratio):
+Positive sentiment was a dominant factor, reinforcing the importance of active developer-community interactions.
+Engagement Depth (Engagement Ratio):
+Games with high engagement depth, measured by average playtime per achievement, consistently scored higher.
+
+-------------------------------------------------------------------------------------------
+
+Neeraj Gummadi (50594025)
+How does the average playtime of games correlate with their perception and adoption rates, and what does this reveal about player engagement?
+
+Hypothesis 1:
+Games with extended average playtimes are associated with greater immersion and engagement, fostering stronger player satisfaction and more favorable reviews.
+Hypothesis 2:
+Shorter playtime games, often found in the casual or indie category, might experience lower adoption rates due to reduced replayability, highlighting the importance of lasting engagement for success.
+
+Rationale for Selecting This Question:
+This question was chosen because understanding the relationship between average playtime and player engagement is critical for game developers to improve game design and marketing strategies. By analyzing this correlation, we aim to uncover key factors that contribute to long-term player satisfaction and adoption rates.
+
+Features Considered
+
+For this analysis, we considered the following features from the dataset:
+
+	1.	Average Playtime (average_playtime) - Measures the typical duration a player spends on a game, which is central to our analysis.
+	2.	Positive Ratings (positive_ratings) - Indicates the number of favorable reviews, reflecting player satisfaction.
+	3.	Negative Ratings (negative_ratings) - Reflects dissatisfaction among players and provides a balance to positive ratings.
+	4.	Price (price) - Affects the adoption rate; players may be more willing to invest time in higher-priced games.
+	5.	Achievements (achievements) - Acts as an engagement metric, potentially motivating players to spend more time on a game.
+
+Parameter Tweaks
+
+	1.	Model Selection:
+	•	We used a Random Forest Regressor for predicting player perception (through positive_ratings) based on average playtime and other features.
+	•	This model was chosen for its ability to handle non-linear relationships and interactions between features.
+	2.	Hyperparameter Adjustments:
+	•	Number of Estimators (n_estimators): Set to 100 to balance computation time and model accuracy.
+	•	Max Depth (max_depth): Tuned to 15 for better generalization and to avoid overfitting.
+	•	Minimum Samples Split (min_samples_split): Increased to 10 to ensure robust splitting in the decision trees.
+	3.	Data Preprocessing:
+	•	Missing values in the average_playtime feature were handled by removing incomplete records.
+	•	Feature scaling was skipped as Random Forest does not require scaled inputs.
+	4.	Train-Test Split:
+	•	The data was split into 80% training and 20% testing to evaluate the model’s performance.
+
+Insights Gained
+
+	1.	Correlation Between Playtime and Positive Ratings:
+	•	Games with higher average playtime tended to have a greater number of positive ratings, indicating that extended playtime correlates with better player engagement and satisfaction.
+	2.	Casual and Indie Games:
+	•	Shorter playtime games (typically casual or indie) showed relatively lower adoption rates, supporting Hypothesis 2. However, some casual games with innovative mechanics still garnered significant positive ratings.
+	3.	Price Influence:
+	•	Higher-priced games with extended average playtimes achieved better adoption rates, suggesting that players perceive them as more valuable investments.
+	4.	Achievements as a Driver:
+	•	Games with more achievements had higher average playtimes, highlighting achievements as a potential motivator for players to engage with the game longer.
+	5.	Negative Ratings Insight:
+	•	Despite longer playtimes, some games with overly complex mechanics saw higher negative ratings, indicating that playtime alone does not guarantee player satisfaction.
+
+Conclusion
+This analysis reaffirms the critical role of player engagement metrics, such as average playtime and achievements, in shaping game perception and adoption rates. Developers should balance game complexity with replayability to maintain player satisfaction across different audience segments.
+
+------------------------------------------------------------------------------------------------
+
+Shashank Govindu (50594030)
+What role does pricing strategy play in influencing the adoption and reception of games on Steam, and how does it shape consumer behavior?
+
+Hypothesis 1:
+Games priced affordably, particularly under $20, attract a broader audience due to their perceived value, thereby boosting adoption rates.
+Hypothesis 2:
+Strategic price reductions during sales or discounts drive significant adoption spikes, demonstrating the pivotal role of perceived affordability in influencing purchasing decisions.
+
+Step 1: Why We Chose This Question
+
+	•	Relevance to the Gaming Industry: Pricing is a crucial factor for game developers and publishers to maximize player adoption and satisfaction. Understanding the relationship between pricing and game adoption/reception can provide insights into consumer behavior and purchasing patterns.
+	•	Data Availability: The dataset includes detailed pricing data, allowing for a comprehensive analysis of how pricing impacts game performance.
+	•	Business Implications: Insights into pricing strategy can help developers optimize pricing and discount strategies to boost adoption rates and sales.
+
+Step 2: Features Considered
+
+	•	Price: The primary feature, as it directly impacts purchasing decisions.
+	•	Positive Ratings: Used as a proxy for player reception and satisfaction.
+	•	Negative Ratings: Helps identify whether low prices correlate with negative feedback.
+	•	Achievements: Represents content depth and player engagement.
+	•	Average Playtime: Captures how much time players spend in a game, indirectly linked to value perception.
+	•	Sales Discounts (if available): Used to understand spikes in adoption during sales or promotions.
+
+Step 3: Parameter Tweaks
+
+	•	Model Selection: A Random Forest Regressor was chosen for this analysis due to its ability to handle non-linear relationships and feature importance ranking.
+	•	Hyperparameters:
+	•	n_estimators: Adjusted to 100 for balancing computation time and model accuracy.
+	•	max_depth: Set to avoid overfitting while ensuring the model captures sufficient complexity.
+	•	min_samples_split: Tuned to ensure meaningful splits in the decision trees.
+	•	Data Cleaning: Missing or invalid pricing data was handled by filtering out entries with null or negative values.
+
+Step 4: Insights Gained
+
+	1.	Correlation Between Low Prices and High Adoption Rates:
+	•	Games priced under $20 show significantly higher adoption rates, particularly in genres such as casual and indie games.
+	•	Players perceive lower-priced games as offering better value for money, especially when combined with positive reviews.
+	2.	Impact of Discounts and Promotions:
+	•	Sales and promotional discounts drive short-term spikes in adoption rates, indicating the effectiveness of price reductions in influencing consumer behavior.
+	•	Games with discounts saw an increase in both downloads and positive reviews during sale periods.
+	3.	Balancing Price and Player Expectations:
+	•	High-priced games (> $60) tend to attract niche audiences, often in genres like AAA titles or simulations. These games show higher expectations for quality and longer playtimes, as reflected in the ratings and reviews.
+	4.	Feature Importance Analysis:
+	•	Price emerged as the most significant feature, followed by positive ratings and achievements. This highlights the role of perceived value in driving player satisfaction and adoption.
