@@ -17,16 +17,16 @@ This project explores key factors influencing video game success, leveraging dat
 ----
 ## **Questions Assigned**
 
-| **Team Member**          | **Primary Hypotheses**                                                                                     | **Code Location**                  | **Model File Location**       |
-|---------------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------|--------------------------------|
-| **Kisore Senthilkumar** | 1️⃣ Critic scores directly influence user ratings for games.                                               | `app/model_game_score.py`          | `app/model_game_score.pkl`    |
-|                           | 2️⃣ A higher user review count amplifies the reliability of user ratings.                                 |                                     |                                |
-| **Harshitha Itta**       | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      |
-|                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |
-| **Shashank Govindu**    | 1️⃣ Lower-priced games show exponential growth in ownership, especially during sales or discounts.         | `app/model_pricing.py`             | `app/model_pricing.pkl`       |
-|                           | 2️⃣ Free-to-play games experience higher ownership but might not correlate with equally high engagement.   |                                     |                                |
-| **Neeraj Gummadi**      | 1️⃣ Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.      | `app/model_ratings.py`             | `app/model_ratings.pkl`       |
-|                           | 2️⃣ Cooperative and multiplayer games are rated more positively compared to single-player experiences.    |                                     |                                |
+| **Team Member**          | **Primary Hypotheses**                                                                                     | **Code Location**                  | **Model File Location**       | **Common Analysis Location**    |
+|---------------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------|--------------------------------|----------------------------------|
+| **Kisore Senthilkumar** | 1️⃣ Critic scores directly influence user ratings for games.                                               | `app/model_game_score.py`          | `app/model_game_score.pkl`    | `doc/analysis.txt`              |
+|                           | 2️⃣ A higher user review count amplifies the reliability of user ratings.                                 |                                     |                                |                                  |
+| **Harshitha Itta**       | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      | `doc/analysis.txt`              |
+|                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |                                  |
+| **Shashank Govindu**    | 1️⃣ Lower-priced games show exponential growth in ownership, especially during sales or discounts.         | `app/model_pricing.py`             | `app/model_pricing.pkl`       | `doc/analysis.txt`              |
+|                           | 2️⃣ Free-to-play games experience higher ownership but might not correlate with equally high engagement.   |                                     |                                |                                  |
+| **Neeraj Gummadi**      | 1️⃣ Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.      | `app/model_ratings.py`             | `app/model_ratings.pkl`       | `doc/analysis.txt`              |
+|                           | 2️⃣ Cooperative and multiplayer games are rated more positively compared to single-player experiences.    |                                     |                                |                                  |
 
 -----
 
@@ -69,4 +69,6 @@ This project explores key factors influencing video game success, leveraging dat
 
 2️⃣ **Cooperative and multiplayer games are rated more positively compared to single-player experiences.**  
    👫 *Elaboration:* Social interaction in cooperative or multiplayer games significantly enhances user satisfaction. Players enjoy sharing achievements and competing with friends, which drives higher ratings compared to solo experiences.
+
+---
 
