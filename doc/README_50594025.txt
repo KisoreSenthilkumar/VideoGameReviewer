@@ -1,0 +1,35 @@
+Neeraj Gummadi 50594025
+
+Questions:
+
+Q1]Is there a significant difference in “score” between free games and paid games as indicated by the “price”?
+
+Q2]Do games with more “supported_languages” tend to receive higher “scores”?
+
+Code associated and Analysis location: The code associated to this particular student can be found in 50594025_Phase2.ipynb 
+
+PDF is available under the same name with the PDF extension
+
+Folder information:
+
+The folder contains 1 code file and 1 PDF file as mentioned above
+
+Then it contains one csv files
+
+
+1) "df_cleaned_out.csv" which contains further cleaned dataset
+
+Gradient Boosting Machine (GBM):
+
+References:
+Scikit-learn documentation on Gradient Boosting:
+https://scikit-learn.org/stable/modules/ensemble.html#gradient-boosting
+Gradient Boosting tutorial with scikit-learn:
+https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html
+Logistic Regression:
+
+Scikit-learn documentation on Logistic Regression:
+https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+Logistic Regression tutorial with scikit-learn:
+https://scikit-learn.org/stable/auto_examples/linear_model/plot_logistic.html
+

@@ -1,0 +1,34 @@
+Shashank Govindu 50594030
+
+Questions:
+
+Q1]What is the relationship between the length of the "detailed_description" and the "score" of the game?
+
+Q2]How do the "categories" affect the "score" of a game?
+
+Code associated and Analysis location: The code associated to this particular student can be found in 50594030_Phase2.ipynb 
+
+PDF is available under the same name with the PDF extension
+
+Folder information:
+
+The folder contains 1 code file and 1 PDF file as mentioned above
+
+Then it contains 1 csv files
+"df_cleaned_out.csv" which contains further cleaned dataset
+
+One-Way ANOVA:
+
+References:
+
+Scipy documentation for ANOVA (scipy.stats module):
+https://docs.scipy.org/doc/scipy/reference/stats.html#anova
+ANOVA tutorial with scipy.stats:
+https://www.statology.org/one-way-anova-python/
+Polynomial Ridge Regression:
+
+Scikit-learn Polynomial Features and Ridge Regression:
+https://scikit-learn.org/stable/auto_examples/linear_model/plot_polynomial_interpolation.html
+Polynomial Regression tutorial (with Ridge as an extension):
+https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html
+https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression

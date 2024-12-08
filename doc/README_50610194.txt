@@ -1,0 +1,25 @@
+Kisore Senthilkumar - 50610194
+
+Questions: 
+
+How the genres listed for the game affect its rating. Will specific genres cause them to have a higher probability of a positive rating?
+
+Code associated and Analysis location:
+The code associated to this particular student can be found in 
+
+a) 50610194_Phase2DataProcessing.ipynb file as the first section of code to preprocess the data 
+b) 50610194_Phase2Models.ipynb file as the block of code where the analysis and modelling happened
+
+Further output reports as PDF is available under the same names with the PDF extensions
+
+Folder information:
+The folder contains the 2 main code files and 2 PDF files as mentioned above
+Then it contains two csv files 
+a) "steam.csv" which is the dataset obtained after the end of phase 1 
+b) "cleaned_data.csv" which contains the binary dataset to be used for the models 
+
+References:
+
+XGBoost documentation at https://xgboost.readthedocs.io/en/stable/
+
+Random Forest Classifier documentation at https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.RandomForestClassifier.html
