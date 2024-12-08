@@ -5,30 +5,30 @@ This project explores key factors influencing video game success, leveraging dat
 
 ---
 
-## 👥 **Team Members and Contributions**
+## 👥 **Team Members**
 
 | **Team Member**          | **University ID** | 
 |---------------------------|-------------------|
 | 🎓 **Kisore Senthilkumar** | 50610194          |
-| 🎓 **Harshita Itta**       | 50605000          |
+| 🎓 **Harshitha Itta**       | 50605000          |
 | 🎓 **Shashank Govindu**    | 50594030          |
 | 🎓 **Neeraj Gummadi**      | 50594025          |
 
 --
-## 👥 **Team Members and Hypotheses**
+## 👥 **Questions Assigned**
 
 | **Team Member**          | **Primary Hypotheses**                                                                                     | **Code Location**                  | **Model File Location**       |
 |---------------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------|--------------------------------|
-| 🎓 **Kisore Senthilkumar** | 1️⃣ Critic scores directly influence user ratings for games.                                               | `app/model_game_score.py`          | `app/model_game_score.pkl`    |
+| **Kisore Senthilkumar** | 1️⃣ Critic scores directly influence user ratings for games.                                               | `app/model_game_score.py`          | `app/model_game_score.pkl`    |
 |                           | 2️⃣ A higher user review count amplifies the reliability of user ratings.                                 |                                     |                                |
-| 🎓 **Harshita Itta**       | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      |
+| **Harshitha Itta**       | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      |
 |                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |
-| 🎓 **Shashank Govindu**    | 1️⃣ Lower-priced games show exponential growth in ownership, especially during sales or discounts.         | `app/model_pricing.py`             | `app/model_pricing.pkl`       |
+| **Shashank Govindu**    | 1️⃣ Lower-priced games show exponential growth in ownership, especially during sales or discounts.         | `app/model_pricing.py`             | `app/model_pricing.pkl`       |
 |                           | 2️⃣ Free-to-play games experience higher ownership but might not correlate with equally high engagement.   |                                     |                                |
-| 🎓 **Neeraj Gummadi**      | 1️⃣ Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.      | `app/model_ratings.py`             | `app/model_ratings.pkl`       |
+| **Neeraj Gummadi**      | 1️⃣ Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.      | `app/model_ratings.py`             | `app/model_ratings.pkl`       |
 |                           | 2️⃣ Cooperative and multiplayer games are rated more positively compared to single-player experiences.    |                                     |                                |
 
----
+--
 
 ## 🌟 **Detailed Hypotheses**
 
