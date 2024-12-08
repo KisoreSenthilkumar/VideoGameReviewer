@@ -72,3 +72,51 @@ This project explores key factors influencing video game success, leveraging dat
 
 ---
 
+Based on the references and images shared, here’s the **decorative folder structure** for your project, inspired by the provided layouts:
+
+---
+### 📂 Folder Structure
+
+```plaintext
+VideoGameReviewer/
+├── app/                               # Application-related files
+│   ├── app_sl.py                      # Main application script
+│   ├── games.db                       # Database file for game information
+│   ├── model_game_score.pkl           # Pickled model for game score analysis
+│   ├── model_game_score.py            # Script for game score prediction
+│   ├── model_playtime.pkl             # Pickled model for playtime prediction
+│   ├── model_playtime.py              # Script for playtime prediction
+│   ├── model_pricing.pkl              # Pickled model for pricing analysis
+│   ├── model_pricing.py               # Script for pricing prediction
+│   ├── model_ratings.pkl              # Pickled model for ratings prediction
+│   ├── model_ratings.py               # Script for user ratings prediction
+│   ├── output.csv                     # Output file containing analysis results
+│   ├── requirements.txt               # Python dependencies
+│   ├── runtime.txt                    # Runtime configuration logs
+│   └── steam.csv                      # Steam dataset for analysis
+│
+├── data/                              # Raw and cleaned data files
+│   ├── cleaned_data.csv               # Preprocessed dataset for analysis
+│   ├── steam_app_data.csv             # Steam app-related raw dataset
+│   └── steamspy_data.csv              # SteamSpy raw dataset
+│
+├── doc/                               # Documentation and analysis reports
+│   ├── 50594025_Phase2.ipynb.pdf      # Execution report by Neeraj
+│   ├── 50594030_Phase2.ipynb.pdf      # Execution report by Shashank
+│   ├── 50605000_Harshitha_Itta_phase2.pdf # Execution report by Harshitha
+│   ├── 50610194_Phase2DataProcessing.pdf # Data processing report by Kisore
+│   ├── 50610194_Phase2Models.pdf      # Model execution report by Kisore
+│   ├── README.txt                     # Project overview README
+│   ├── analysis.txt                   # Common analysis details
+│   └── report.pdf                     # Comprehensive project report
+│
+├── exp/                               # Experiment and phase-wise files
+│   ├── 50594025_Phase2.ipynb          # Phase 2 notebook by Neeraj
+│   ├── 50594030_Phase2.ipynb          # Phase 2 notebook by Shashank
+│   ├── 50605000_Harshitha_Itta_phase2.ipynb # Phase 2 notebook by Harshitha
+│   ├── 50610194_Phase2DataProcessing.ipynb # Data processing notebook
+│   ├── 50610194_Phase2Models.ipynb    # Model experiments by Kisore
+│   └── Steam_Data_Phase_1.ipynb       # Initial phase notebook
+│
+└── README.md                          # Main project documentation
+```
