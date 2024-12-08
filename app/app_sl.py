@@ -13,13 +13,13 @@ def connect_db():
 # Load models
 
 with open('model_playtime.pkl', 'rb') as file:
-    model_playtime = pickle.load(file)  
+    model_playtime = pickle.load(file)
+
+with open('model_ratings.pkl', 'rb') as file:
+    model_ratings = pickle.load(file)
 
 with open('model_pricing.pkl', 'rb') as file:
     model_pricing = pickle.load(file)
-    
-with open('model_ratings.pkl', 'rb') as file:
-    model_ratings = pickle.load(file)    
 
 with open('model_game_score.pkl', 'rb') as file:
     model_game_score = pickle.load(file)
@@ -56,8 +56,8 @@ page = st.sidebar.radio("Go to", ["Home", "Manage Steam Games", "View Games", "P
 
 # Home
 if page == "Home":
-    st.title("Game Management Dashboard")
-    st.write("Welcome to the Game Management Dashboard! Use the navigation menu to explore features.")
+    st.title("Video Game Reception Prediction")
+    st.write("Welcome to the Video Game Reception Prediction Dashboard! Use the navigation menu to explore features.")
 
 # Manage Steam Games
 elif page == "Manage Steam Games":
@@ -84,42 +84,54 @@ elif page == "Manage Steam Games":
         selected_row = df[df["name"] == selected_game_name].iloc[0]
 
         # Display Edit form with populated values
+        # Display Edit form with populated values
         st.subheader("Edit Game")
         with st.form("edit_game_form"):
             updated_data = {
-                "appid": st.text_input("App ID", value=selected_row["appid"]),
-                "name": st.text_input("Name", value=selected_row["name"]),
-                "release_date": st.text_input("Release Date", value=selected_row["release_date"]),
-                "english": st.text_input("English", value=selected_row["english"]),
-                "developer": st.text_input("Developer", value=selected_row["developer"]),
-                "publisher": st.text_input("Publisher", value=selected_row["publisher"]),
-                "platforms": st.text_input("Platforms", value=selected_row["platforms"]),
-                "required_age": st.text_input("Required Age", value=selected_row["required_age"]),
-                "categories": st.text_input("Categories", value=selected_row["categories"]),
-                "genres": st.text_input("Genres", value=selected_row["genres"]),
-                "steamspy_tags": st.text_input("SteamSpy Tags", value=selected_row["steamspy_tags"]),
-                "achievements": st.text_input("Achievements", value=selected_row["achievements"]),
-                "positive_ratings": st.text_input("Positive Ratings", value=selected_row["positive_ratings"]),
-                "negative_ratings": st.text_input("Negative Ratings", value=selected_row["negative_ratings"]),
-                "average_playtime": st.text_input("Average Playtime", value=selected_row["average_playtime"]),
-                "median_playtime": st.text_input("Median Playtime", value=selected_row["median_playtime"]),
-                "owners": st.text_input("Owners", value=selected_row["owners"]),
-                "price": st.text_input("Price", value=selected_row["price"]),
+                "appid": st.text_input("App ID", value=str(selected_row["appid"])),
+                "name": st.text_input("Name", value=str(selected_row["name"])),
+                "release_date": st.text_input("Release Date", value=str(selected_row["release_date"])),
+                "english": st.text_input("English", value=str(selected_row["english"])),
+                "developer": st.text_input("Developer", value=str(selected_row["developer"])),
+                "publisher": st.text_input("Publisher", value=str(selected_row["publisher"])),
+                "platforms": st.text_input("Platforms", value=str(selected_row["platforms"])),
+                "required_age": st.text_input("Required Age", value=str(selected_row["required_age"])),
+                "categories": st.text_input("Categories", value=str(selected_row["categories"])),
+                "genres": st.text_input("Genres", value=str(selected_row["genres"])),
+                "steamspy_tags": st.text_input("SteamSpy Tags", value=str(selected_row["steamspy_tags"])),
+                "achievements": st.text_input("Achievements", value=str(selected_row["achievements"])),
+                "positive_ratings": st.text_input("Positive Ratings", value=str(selected_row["positive_ratings"])),
+                "negative_ratings": st.text_input("Negative Ratings", value=str(selected_row["negative_ratings"])),
+                "average_playtime": st.text_input("Average Playtime", value=str(selected_row["average_playtime"])),
+                "median_playtime": st.text_input("Median Playtime", value=str(selected_row["median_playtime"])),
+                "owners": st.text_input("Owners", value=str(selected_row["owners"])),
+                "price": st.text_input("Price", value=str(selected_row["price"])),
             }
             if st.form_submit_button("Update Game"):
                 try:
+
+                    # Display the app ID being updated for debugging
+                    st.write(f"Updating Game with App ID: {updated_data['appid']}")
+                    print(f"Updating Game with App ID: {updated_data['appid']}")  # Print to terminal for debugging
+
+                    # Connect to the database
                     conn = connect_db()
                     cursor = conn.cursor()
-                    cursor.execute("""
+
+                    # Update the record in the database
+                    query = """
                         UPDATE SteamData
                         SET appid = ?, name = ?, release_date = ?, english = ?, developer = ?, publisher = ?,
                             platforms = ?, required_age = ?, categories = ?, genres = ?, steamspy_tags = ?,
                             achievements = ?, positive_ratings = ?, negative_ratings = ?, average_playtime = ?,
                             median_playtime = ?, owners = ?, price = ?
-                        WHERE rowid = ?
-                    """, (*updated_data.values(), selected_row["rowid"]))
+                        WHERE appid = ?
+                    """
+                    cursor.execute(query, (*updated_data.values(), updated_data["appid"]))
+
                     conn.commit()
                     conn.close()
+
                     st.success("Game updated successfully!")
                     # Refresh the table
                     df = fetch_games()
@@ -129,15 +141,12 @@ elif page == "Manage Steam Games":
 
         
         # Delete functionality
-
-        
         st.subheader("Delete Game")
         
         if st.button("Delete Game"):
             try:
                 conn = connect_db()
                 cursor = conn.cursor()
-
                 cursor.execute("DELETE FROM SteamData WHERE name = ?", (selected_game_name,))  # Updated to use 'name' for targeting
                 conn.commit()
                 conn.close()
@@ -148,11 +157,8 @@ elif page == "Manage Steam Games":
             except Exception as e:
                 st.error(f"Error deleting game: {e}")
 
-                
-
     else:
         st.warning("No games found in the database.")
-        
 
     # Add a new game
     st.subheader("Add a New Game")
