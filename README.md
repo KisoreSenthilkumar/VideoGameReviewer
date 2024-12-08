@@ -1,6 +1,6 @@
 # 🎮 **Video Game Reception Prediction** 🎮
 
-Welcome to the **Video Game Reception Prediction** project!  
+Welcome to the **Video Game Reception Prediction** project hosted at https://videogameappcode-ve99unwv2suqfshnx42vob.streamlit.app/ !  
 This project explores key factors influencing video game success, leveraging data analysis and predictive modeling to understand trends in the gaming industry. Below are the details of our amazing team and their contributions!
 
 ----
