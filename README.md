@@ -114,3 +114,140 @@ VideoGameReviewer/
 │
 └── README.md                          # Main project documentation
 ```
+---
+# 🛠️ **Instructions to Build and Run the Video Game Reception Prediction App**
+
+## 🧾 **Prerequisites**
+
+Before you begin, ensure the following requirements are met:
+1. **Operating System:** Windows, macOS, or Linux.  
+2. **Python Version:** Python 3.8 or higher.  
+3. **Python Package Manager:** `pip` must be installed.  
+4. **Streamlit:** Ensure Streamlit is compatible with your Python version.
+
+---
+
+## 📂 **Step 1: Clone the Repository**
+
+Download the repository from GitHub to your local machine. Open a terminal or command prompt and run:
+
+```bash
+git clone https://github.com/KisoreSenthilkumar/VideoGameReviewer.git
+cd VideoGameReviewer
+```
+
+This will create a local copy of the project and navigate into its root directory.
+
+---
+
+## 🔧 **Step 2: Install Required Dependencies**
+
+The project requires specific Python packages to function. Install them using the provided `requirements.txt` file. Run:
+
+```bash
+pip install -r requirements.txt
+```
+
+This command installs dependencies like:
+- `streamlit` - For the web-based dashboard.
+- `pandas` - For data manipulation.
+- `lightgbm`, `scikit-learn` - For model training and predictions.
+- `sqlite3` - For database management.
+
+---
+
+## 📁 **Step 3: Verify Data and Model Files**
+
+Ensure the following files are present in the `app/` directory:
+
+1. **Database File:**
+   - `games.db` – The SQLite database containing Steam game data.
+
+2. **Model Files:**  
+   Pre-trained machine learning models:
+   - `model_playtime.pkl` – Predicts average playtime.  
+   - `model_ratings.pkl` – Predicts positive ratings.  
+   - `model_pricing.pkl` – Predicts pricing.  
+   - `model_game_score.pkl` – Predicts overall game score.
+
+---
+
+## 🚀 **Step 4: Run the Application**
+
+Launch the application using Streamlit. Run the following command in your terminal:
+
+```bash
+streamlit run app/app_sl.py
+```
+
+This command will:
+1. Start the Streamlit server.
+2. Open the **Video Game Reception Prediction Dashboard** in your default web browser.
+
+If the browser doesn’t open automatically, check the terminal for a link to access the app.
+
+---
+
+## 🧭 **Step 5: Navigate Through the App**
+
+Once the dashboard is launched, use the sidebar to access its features:
+
+1. **Home:**  
+   Overview of the dashboard and its features.
+
+2. **Manage Steam Games:**  
+   - View all games in the database.  
+   - Add new game records.  
+   - Edit or delete existing game records.
+
+3. **View Games:**  
+   Explore game data stored in the `games.db` database.
+
+4. **Prediction Tools:**
+   - **Playtime Prediction:** Enter features like positive ratings, price, and achievements to estimate average playtime.
+   - **Ratings Prediction:** Predict the number of positive ratings based on game attributes.
+   - **Pricing Prediction:** Estimate a game’s price for market competitiveness.
+   - **Game Score Prediction:** Evaluate a game’s reception score based on features like genre and platform compatibility.
+
+---
+
+## 🌟 **Step 6: Example Inputs for Predictions**
+
+To test the app’s prediction features, use the following sample inputs:
+
+### **Playtime Prediction**
+- Positive Ratings: `5000`  
+- Negative Ratings: `300`  
+- Price: `$20`  
+- Achievements: `10`
+
+### **Ratings Prediction**
+- Negative Ratings: `500`  
+- Price: `$25`  
+- Achievements: `15`  
+- Average Playtime: `100`
+
+### **Pricing Prediction**
+- Positive Ratings: `2000`  
+- Negative Ratings: `200`  
+- Achievements: `8`  
+- Average Playtime: `50`
+
+---
+
+## 🛑 **Troubleshooting**
+
+Here are common issues and their solutions:
+
+### **1. Database Not Found**
+- **Error:** `FileNotFoundError: games.db not found`  
+- **Fix:** Ensure `games.db` is present in the `app/` directory.
+
+### **2. Missing Model Files**
+- **Error:** `FileNotFoundError: model_playtime.pkl not found`  
+- **Fix:** Ensure all `.pkl` files are available in the `app/` directory.
+
+### **3. ModuleNotFoundError**
+- **Error:** `ModuleNotFoundError: No module named '<package>'`  
+- **Fix:** Re-run `pip install -r requirements.txt` to ensure all dependencies are installed.
+
