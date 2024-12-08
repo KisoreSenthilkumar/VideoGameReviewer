@@ -3,7 +3,7 @@
 Welcome to the **Video Game Reception Prediction** project!  
 This project explores key factors influencing video game success, leveraging data analysis and predictive modeling to understand trends in the gaming industry. Below are the details of our amazing team and their contributions!
 
----
+----
 
 ## 👥 **Team Members**
 
@@ -14,8 +14,8 @@ This project explores key factors influencing video game success, leveraging dat
 | 🎓 **Shashank Govindu**    | 50594030          |
 | 🎓 **Neeraj Gummadi**      | 50594025          |
 
---
-## 👥 **Questions Assigned**
+----
+## **Questions Assigned**
 
 | **Team Member**          | **Primary Hypotheses**                                                                                     | **Code Location**                  | **Model File Location**       |
 |---------------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------|--------------------------------|
@@ -28,7 +28,7 @@ This project explores key factors influencing video game success, leveraging dat
 | **Neeraj Gummadi**      | 1️⃣ Certain genres, such as RPG and FPS, inherently receive higher ratings due to immersive gameplay.      | `app/model_ratings.py`             | `app/model_ratings.pkl`       |
 |                           | 2️⃣ Cooperative and multiplayer games are rated more positively compared to single-player experiences.    |                                     |                                |
 
---
+-----
 
 ## 🌟 **Detailed Hypotheses**
 
