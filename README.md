@@ -27,6 +27,88 @@ This project explores key factors influencing video game success, leveraging dat
 | **Neeraj Gummadi**        | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      | `doc/analysis.txt`              |
 |                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |                                  |
 -----
+## **Project Highlights**
+Here’s a **decorated GitHub README.md** for showcasing the highlights of your models:
+
+---
+
+# 🎮 **Video Game Reception Prediction** - **Model Highlights** 🎮
+
+Welcome to the **Model Highlights** section of our **Video Game Reception Prediction** project! Here, we showcase the key features, algorithms, and strengths of the predictive models that drive this project.
+
+---
+
+## 🚀 **Detailed Highlights**
+
+### 🎯 **1. Game Score Prediction**
+- **Algorithm**: Gradient Boosting Framework
+- **Purpose**: Predict overall game scores based on genres (`is_action`, `is_indie`, etc.) and platform compatibility (`is_windows`, `is_mac`, etc.).
+- **Key Highlights**:
+  - Optimized for **low RMSE** with `num_boost_round=200` and `learning_rate=0.1`.
+  - Efficiently handles genre and platform-based feature interactions.
+  - Model saved as **`model_game_score.pkl`** for quick deployment.
+
+---
+
+### 🕒 **2. Playtime Prediction**
+- **Algorithm**: LightGBM Regression
+- **Purpose**: Estimate average playtime using features like:
+  - `positive_ratings`, `negative_ratings`, `price`, `achievements`.
+- **Key Highlights**:
+  - Preprocessed for clean and accurate training.
+  - Handles missing data effectively with robust LightGBM regression.
+  - Saves the model as **`model_playtime.pkl`** for reuse in Streamlit apps.
+
+---
+
+### 💸 **3. Pricing Prediction**
+- **Algorithm**: Decision Tree Regression
+- **Purpose**: Predict game prices by analyzing:
+  - `positive_ratings`, `negative_ratings`, `achievements`, and `playtime`.
+- **Key Highlights**:
+  - Simplistic and interpretable decision tree splits for actionable pricing insights.
+  - Model saved as **`model_pricing.pkl`** to enable instant predictions.
+
+---
+
+### ⭐ **4. Ratings Prediction**
+- **Algorithm**: Random Forest Regressor
+- **Purpose**: Predict positive ratings using features such as:
+  - `negative_ratings`, `price`, `achievements`, and `playtime`.
+- **Key Highlights**:
+  - Balanced accuracy with reduced hyperparameters for faster computation:
+    - `n_estimators=50`, `max_depth=10`, `max_features='sqrt'`.
+  - Serialized as **`model_ratings.pkl`** for efficient use in prediction pipelines.
+
+---
+
+## ✨ **General Strengths**
+1. **Dynamic Data Handling**:
+   - All models are integrated with a centralized **SQLite database** (`games.db`) for seamless data retrieval and preprocessing.
+2. **Reusable Models**:
+   - Models are stored in `.pkl` files, ensuring easy portability and deployment.
+3. **Real-World Relevance**:
+   - Focused on practical features like ratings, price, playtime, and genre for actionable insights.
+4. **Scalability**:
+   - Modular structure allows for the easy addition of new models or datasets.
+
+---
+
+## 📈 **Impact on Gaming Analytics**
+- Provides game developers and publishers with actionable insights on:
+  - Pricing strategies.
+  - User satisfaction metrics.
+  - Genre-specific trends.
+- Enhances decision-making through accurate predictions of playtime, ratings, and scores.
+
+---
+
+✨ Dive into our project and explore the world of **data-driven gaming analytics**!  
+🔗 [Visit the Streamlit Dashboard](https://videogameappcode-ve99unwv2suqfshnx42vob.streamlit.app/)  
+
+---
+
+Feel free to copy and paste this into your GitHub README.md file! Let me know if you'd like further customizations.
 
 ## 🌟 **Detailed Hypotheses**
 
@@ -56,6 +138,7 @@ This project explores key factors influencing video game success, leveraging dat
    💸 *Elaboration:* Price drops during sales events, such as the Steam Winter Sale, drastically increase game adoption. These periods lower the financial barrier for entry, prompting players to make impulse purchases and contributing to exponential growth in ownership.  
 
 2️⃣ **Free-to-play games experience higher ownership but might not correlate with equally high engagement.**  
+
    🎮 *Elaboration:* Free-to-play games attract a massive audience due to their zero-cost entry but often fail to maintain high engagement levels. Players might try the game but leave without investing time unless incentivized by competitive mechanics or social features.
 
 ---
