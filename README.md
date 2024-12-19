@@ -27,67 +27,82 @@ This project explores key factors influencing video game success, leveraging dat
 | **Neeraj Gummadi**        | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      | `doc/analysis.txt`              |
 |                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |                                  |
 -----
-## 🚀 **Detailed Highlights**
-### 🎯 **1. Game Score Prediction**
-- **Algorithm**: Gradient Boosting Framework
-- **Purpose**: Predict overall game scores based on genres (`is_action`, `is_indie`, etc.) and platform compatibility (`is_windows`, `is_mac`, etc.).
-- **Key Highlights**:
-  - Optimized for **low RMSE** with `num_boost_round=200` and `learning_rate=0.1`.
-  - Efficiently handles genre and platform-based feature interactions.
-  - Model saved as **`model_game_score.pkl`** for quick deployment.
+# 🚀 Highlights:
+
+## 🎯 **1. Game Score Prediction (Boosting Framework)**
+
+### **Code and Approach**
+- Implemented in **`model_game_score.py`**, the model leverages **Boosting Framework**, a powerful gradient boosting algorithm, to predict game scores.
+- The dataset was dynamically extracted from the **SQLite database (`games.db`)**, ensuring a clean, centralized data source.
+- Key features that significantly influence game scores:
+  - **Genre-based indicators**: (`is_action`, `is_indie`, etc.).
+  - **Platform compatibility**: (`is_windows`, `is_mac`, `is_linux`).
+- **Hyperparameter Tuning**:
+  - **Learning Rate (`0.1`)**: Achieves a balance between training speed and accuracy.
+  - **Number of Leaves (`31`)**: Captures complex feature interactions without overfitting.
+  - **Boosting Rounds (`200`)**: Ensures sufficient learning from the data.
+
+### **Model Highlight**
+- Preprocessed the dataset to handle missing data, ensuring a robust and clean training pipeline.
+- The model provides **actionable insights** for developers, quantifying how genres and platforms influence user reception.
+- Saved as **`model_game_score.pkl`**, enabling seamless integration into the Streamlit dashboard for non-technical users.
 
 ---
 
-### 🕒 **2. Playtime Prediction**
-- **Algorithm**: LightGBM Regression
-- **Purpose**: Estimate average playtime using features like:
-  - `positive_ratings`, `negative_ratings`, `price`, `achievements`.
-- **Key Highlights**:
-  - Preprocessed for clean and accurate training.
-  - Handles missing data effectively with robust LightGBM regression.
-  - Saves the model as **`model_playtime.pkl`** for reuse in Streamlit apps.
+## 🕒 **2. Playtime Prediction (LightGBM Regression)**
+
+### **Code and Approach**
+- Developed in **`model_playtime.py`**, this model uses **LightGBM Regression** to predict the average playtime of games, a key metric for understanding player engagement.
+- **Feature Selection**: Key predictors include:
+  - `positive_ratings`, `negative_ratings`, `price`, and `achievements`.
+- **Data Handling**:
+  - Dynamically fetched data from the **`SteamData`** table in the database, ensuring up-to-date and relevant inputs.
+- **Hyperparameter Tuning**:
+  - **Metric (`rmse`)**: Focused on minimizing large prediction errors.
+  - **Learning Rate (`0.1`)** and **Boosting Rounds (`200`)**: Maintained precise and computationally efficient predictions.
+
+### **Model Highlight**
+- Helps developers gauge how various factors influence game engagement, enabling **strategic content improvements**.
+- Preprocessed the data to remove inconsistencies, ensuring reliable and robust predictions.
+- Saved as **`model_playtime.pkl`**, ready for real-time predictions via the Streamlit dashboard.
 
 ---
 
-### 💸 **3. Pricing Prediction**
-- **Algorithm**: Decision Tree Regression
-- **Purpose**: Predict game prices by analyzing:
-  - `positive_ratings`, `negative_ratings`, `achievements`, and `playtime`.
-- **Key Highlights**:
-  - Simplistic and interpretable decision tree splits for actionable pricing insights.
-  - Model saved as **`model_pricing.pkl`** to enable instant predictions.
+## 💸 **3. Pricing Prediction (Decision Tree Regression)**
+
+### **Code and Approach**
+- Implemented in **`model_pricing.py`**, this model uses **Decision Tree Regression** to predict game prices.
+- Features leveraged include:
+  - `positive_ratings`, `negative_ratings`, `achievements`, and `average_playtime`.
+- **Decision Trees**:
+  - Naturally excel at handling categorical splits, making them ideal for pricing analysis.
+- Ensured reproducibility by setting a **fixed random state (`42`)**.
+
+### **Model Highlight**
+- **Strategic Pricing Insights**: The model reveals how user feedback and engagement metrics drive perceived value, helping developers and publishers **optimize pricing strategies**.
+- Focused on creating an **interpretable model**, where stakeholders can easily understand the factors influencing pricing.
+- Saved as **`model_pricing.pkl`**, ensuring portability and usability across platforms.
 
 ---
 
-### ⭐ **4. Ratings Prediction**
-- **Algorithm**: Random Forest Regressor
-- **Purpose**: Predict positive ratings using features such as:
-  - `negative_ratings`, `price`, `achievements`, and `playtime`.
-- **Key Highlights**:
-  - Balanced accuracy with reduced hyperparameters for faster computation:
-    - `n_estimators=50`, `max_depth=10`, `max_features='sqrt'`.
-  - Serialized as **`model_ratings.pkl`** for efficient use in prediction pipelines.
+## ⭐ **4. Ratings Prediction (Random Forest Regressor)**
 
+### **Code and Approach**
+- Built in **`model_ratings.py`**, this model uses **Random Forest Regression** to predict the number of positive ratings a game is likely to receive.
+- **Key Predictors**:
+  - `negative_ratings`, `price`, `achievements`, and `average_playtime`.
+- **Optimized for Efficiency**:
+  - **Reduced number of trees (`n_estimators=50`)**: Balances performance and speed.
+  - **Limited tree depth (`max_depth=10`)**: Prevents overfitting while maintaining accuracy.
+  - **Feature Subsets (`max_features='sqrt'`)**: Ensures diversity in splits and better generalization.
+
+### **Model Highlight**
+- Equips developers with tools to predict and improve **player satisfaction metrics**.
+- Used **`train_test_split`** to ensure reliable evaluation, while preprocessing steps guaranteed a clean dataset.
+- Saved as **`model_ratings.pkl`**, enabling seamless deployment in the Streamlit app.
 ---
-
-## ✨ **General Strengths**
-1. **Dynamic Data Handling**:
-   - All models are integrated with a centralized **SQLite database** (`games.db`) for seamless data retrieval and preprocessing.
-2. **Reusable Models**:
-   - Models are stored in `.pkl` files, ensuring easy portability and deployment.
-3. **Real-World Relevance**:
-   - Focused on practical features like ratings, price, playtime, and genre for actionable insights.
-4. **Scalability**:
-   - Modular structure allows for the easy addition of new models or datasets.
-
----
-
-## 📈 **Impact on Gaming Analytics**
-- Provides game developers and publishers with actionable insights on:
-  - Pricing strategies.
-  - User satisfaction metrics.
-  - Genre-specific trends.
-- Enhances decision-making through accurate predictions of playtime, ratings, and scores.
+## 🌟 **Overall Highlights**
+Our work demonstrates how advanced machine learning models can transform the gaming industry, delivering data-driven insights that shape the future of game design, pricing, and player satisfaction.
 
 ---
 
