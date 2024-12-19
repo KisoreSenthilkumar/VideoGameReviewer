@@ -27,19 +27,7 @@ This project explores key factors influencing video game success, leveraging dat
 | **Neeraj Gummadi**        | 1️⃣ Games with longer playtime offer more value, correlating positively with ownership counts.             | `app/model_playtime.py`            | `app/model_playtime.pkl`      | `doc/analysis.txt`              |
 |                           | 2️⃣ Highly engaging games with repetitive play sessions lead to higher player retention and ownership.     |                                     |                                |                                  |
 -----
-## **Project Highlights**
-Here’s a **decorated GitHub README.md** for showcasing the highlights of your models:
-
----
-
-# 🎮 **Video Game Reception Prediction** - **Model Highlights** 🎮
-
-Welcome to the **Model Highlights** section of our **Video Game Reception Prediction** project! Here, we showcase the key features, algorithms, and strengths of the predictive models that drive this project.
-
----
-
 ## 🚀 **Detailed Highlights**
-
 ### 🎯 **1. Game Score Prediction**
 - **Algorithm**: Gradient Boosting Framework
 - **Purpose**: Predict overall game scores based on genres (`is_action`, `is_indie`, etc.) and platform compatibility (`is_windows`, `is_mac`, etc.).
