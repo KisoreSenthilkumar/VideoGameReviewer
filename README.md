@@ -91,13 +91,6 @@ This project explores key factors influencing video game success, leveraging dat
 
 ---
 
-✨ Dive into our project and explore the world of **data-driven gaming analytics**!  
-🔗 [Visit the Streamlit Dashboard](https://videogameappcode-ve99unwv2suqfshnx42vob.streamlit.app/)  
-
----
-
-Feel free to copy and paste this into your GitHub README.md file! Let me know if you'd like further customizations.
-
 ## 🌟 **Detailed Hypotheses**
 
 ### 🎓 **Kisore Senthilkumar (Game Score Analysis)**
