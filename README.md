@@ -44,7 +44,7 @@ This project explores key factors influencing video game success, leveraging dat
 
 ### **Model Highlight**
 - Preprocessed the dataset to handle missing data, ensuring a robust and clean training pipeline.
-- The model provides **actionable insights** for developers, quantifying how genres and platforms influence user reception.
+- The model provides **actionable insights**, quantifying how genres and platforms influence user reception.
 - Saved as **`model_game_score.pkl`**, enabling seamless integration into the Streamlit dashboard for non-technical users.
 
 ---
@@ -62,7 +62,7 @@ This project explores key factors influencing video game success, leveraging dat
   - **Learning Rate (`0.1`)** and **Boosting Rounds (`200`)**: Maintained precise and computationally efficient predictions.
 
 ### **Model Highlight**
-- Helps developers gauge how various factors influence game engagement, enabling **strategic content improvements**.
+- Helps gauge how various factors influence game engagement, enabling **strategic content improvements**.
 - Preprocessed the data to remove inconsistencies, ensuring reliable and robust predictions.
 - Saved as **`model_playtime.pkl`**, ready for real-time predictions via the Streamlit dashboard.
 
@@ -79,7 +79,7 @@ This project explores key factors influencing video game success, leveraging dat
 - Ensured reproducibility by setting a **fixed random state (`42`)**.
 
 ### **Model Highlight**
-- **Strategic Pricing Insights**: The model reveals how user feedback and engagement metrics drive perceived value, helping developers and publishers **optimize pricing strategies**.
+- **Strategic Pricing Insights**: The model reveals how user feedback and engagement metrics drive perceived value, helping publishers **optimize pricing strategies**.
 - Focused on creating an **interpretable model**, where stakeholders can easily understand the factors influencing pricing.
 - Saved as **`model_pricing.pkl`**, ensuring portability and usability across platforms.
 
@@ -97,7 +97,7 @@ This project explores key factors influencing video game success, leveraging dat
   - **Feature Subsets (`max_features='sqrt'`)**: Ensures diversity in splits and better generalization.
 
 ### **Model Highlight**
-- Equips developers with tools to predict and improve **player satisfaction metrics**.
+- Equips with tools to predict and improve **player satisfaction metrics**.
 - Used **`train_test_split`** to ensure reliable evaluation, while preprocessing steps guaranteed a clean dataset.
 - Saved as **`model_ratings.pkl`**, enabling seamless deployment in the Streamlit app.
 ---
